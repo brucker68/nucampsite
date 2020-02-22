@@ -9,8 +9,17 @@ import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { Icon } from 'react-native-elements';
+import {connect} from 'react-redux';
 import SafeAreaView from 'react-native-safe-area-view';
-    
+import {fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreatrs';   
+
+const mapDispatchToProps ={
+    fetchCampsites,
+    fetchComments,
+    fetchPromotions,
+    fetchPartners
+};
+
 const DirectoryNavigator = createStackNavigator(
     {
         Directory: { 
@@ -314,4 +323,4 @@ const styles = StyleSheet.create({
          fontSize: 24  
      }
 });
-export default Main;
+export default connect(mapStatetoProps, mapDispatchToProps)(Favorites);
