@@ -17,6 +17,7 @@ function RenderCampsite(props) {
             <Text style={{margin: 10}}>
                 {campsite.description}
             </Text>
+            <View>
             <Icon
                 align='center'
                 name={props.favorite ? 'heart' : 'heart-o'}
@@ -37,6 +38,7 @@ function RenderCampsite(props) {
                 onPress={() => props.ShowModal()}
 
             />
+            </View>
             </Card>
             </View>
         );
