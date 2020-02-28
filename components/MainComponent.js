@@ -286,6 +286,12 @@ Favorites: {
 );
 
 class Main extends Component {
+    componentDidMount() {
+        this.props.fetchCampsites();
+        this.props.fetchComments();
+        this.props.fetchPromotions();
+        this.props.fetchPartners();
+    }
     render() {
         return (
             <View style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight }}>
@@ -323,4 +329,5 @@ const styles = StyleSheet.create({
          fontSize: 24  
      }
 });
-export default connect(mapStatetoProps, mapDispatchToProps)(Favorites);
+
+export default connect(null, mapDispatchToProps)(Main);
